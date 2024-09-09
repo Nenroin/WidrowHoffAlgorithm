@@ -8,6 +8,7 @@ using neuron_t = double;
 class linear_artificial_neural_network
 {
     std::vector<neural_layer_t> neural_network_;
+    
 public:
     linear_artificial_neural_network& add_neural_layer(const int neurons_number)
     {

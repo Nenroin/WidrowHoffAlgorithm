@@ -8,29 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56f5d76e-7c8a-405d-84bd-08048fff128a" name="Changes" comment="Create base functional">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.WidrowHoffAlgorithm/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.WidrowHoffAlgorithm/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.WidrowHoffAlgorithm/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.WidrowHoffAlgorithm/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/LinearArtificialNeuralNetwork.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/CL.command.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/CL.read.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/CL.write.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/Cl.items.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/WidrowHoffAlgorithm.lastbuildstate" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/link.command.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/link.read.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/link.secondary.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/link.write.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHoffAlgorithm.exe.recipe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHoffAlgorithm.ilk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHoffAlgorithm.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/vc143.idb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/vc143.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/x64/Debug/WidrowHoffAlgorithm.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/x64/Debug/WidrowHoffAlgorithm.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LinearArtificialNeuralNetwork.h" beforeDir="false" afterPath="$PROJECT_DIR$/LinearArtificialNeuralNetwork.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WidrowHoffAlgorithm.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHoffAlgorithm.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +122,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1725863841869</updated>
-      <workItem from="1725863843595" duration="3502000" />
+      <workItem from="1725863843595" duration="3765000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />
