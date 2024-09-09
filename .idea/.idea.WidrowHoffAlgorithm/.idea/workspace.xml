@@ -7,8 +7,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56f5d76e-7c8a-405d-84bd-08048fff128a" name="Changes" comment="Create base functional">
+    <list default="true" id="56f5d76e-7c8a-405d-84bd-08048fff128a" name="Changes" comment="Test">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WidrowHoffAlgorithm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WidrowHoffAlgorithm/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LinearArtificialNeuralNetwork.h" beforeDir="false" afterPath="$PROJECT_DIR$/LinearArtificialNeuralNetwork.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/LinearArtificialNeuralNetwork.obj" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/LinearArtificialNeuralNetwork.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHoffAlgorithm.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHoffAlgorithm.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHoffAlgorithm.obj" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHoffAlgorithm.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/vc143.idb" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/vc143.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/vc143.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/vc143.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/WidrowHoffAlgorithm.exe" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/WidrowHoffAlgorithm.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/WidrowHoffAlgorithm.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/WidrowHoffAlgorithm.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +28,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.40.33807/include/vector" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/IDE/JetBrains/RiderProjects/WidrowHoffAlgorithm/LinearArtificialNeuralNetwork.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/IDE/JetBrains/RiderProjects/WidrowHoffAlgorithm/LinearArtificialNeuralNetwork.h" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
@@ -122,7 +131,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1725863841869</updated>
-      <workItem from="1725863843595" duration="3765000" />
+      <workItem from="1725863843595" duration="6408000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />
@@ -140,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725867392318</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Test">
+      <option name="closed" value="true" />
+      <created>1725867673273</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1725867673273</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,7 +180,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Init" />
     <MESSAGE value="Create base functional" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create base functional" />
+    <MESSAGE value="Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
