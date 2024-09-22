@@ -1,56 +1,27 @@
 #pragma once
-#include <vector>
-#include <iostream>
+#include "pair_hash.h"
 
-using neuron_layer_t = std::vector<double>;
-using neuron_t = double;
-using neuron_connect_t =  std::vector<double>;
-using neuron_connect_weight_t = double;
-
-class linear_artificial_neural_network
+// Designed to create a neural network structure
+class linear_artif_neural_network
 {
-    std::vector<neuron_layer_t> neural_network_;
-    std::vector<neuron_connect_t> neuron_connections_;
-    
-public:
-    void set_neuron_connection_weight(const int neuron_connect_idx, const int neuron_idx, const neuron_t neuron_value)
-    {
-        neural_network_.at(neuron_connect_idx).at(neuron_idx) = neuron_value;
-    }
-    
-    neuron_connect_weight_t get_neuron_connection_weight(const int neural_layer_idx, const int neuron_idx) const
-    {
-        return neural_network_.at(neural_layer_idx).at(neuron_idx);
-    }
-    
-    void set_neuron(const int neural_layer_idx, const int neuron_idx, const neuron_t neuron_value)
-    {
-        neural_network_.at(neural_layer_idx).at(neuron_idx) = neuron_value;
-    }
-    
-    neuron_t get_neuron(const int neural_layer_idx, const int neuron_idx) const
-    {
-        return neural_network_.at(neural_layer_idx).at(neuron_idx);
-    }
-    
-    linear_artificial_neural_network& add_neural_layer(const int neurons_number)
-    {
-        neural_network_.push_back(neuron_layer_t(neurons_number));  // NOLINT(modernize-use-emplace)
+protected:
+    // (Layer idx, neuron idx), value
+    std::unordered_map<std::pair<unsigned int, unsigned int>, double, pair_hash> neurons_;
+    // (previous neuron, next neuron), weight
+    std::unordered_map<std::pair<unsigned int, unsigned int>, double, pair_hash> neuron_connections_;
 
-        return *this; 
-    }
-    
-    void show_neural_network_structure() const
-    {
-        int idx{ 1 };
-        const int layer_number{ static_cast<int>(neural_network_.size()) } ;
-        
-        for(const auto &neural_layer : neural_network_)
-        {
-            const int neurons_number = static_cast<int>(neural_layer.size());
-            std::cout << neurons_number << (idx < layer_number ? " <-> " : "");
-            
-            ++idx;
-        }
-    }
+public:
+    linear_artif_neural_network() = default;
+    ~linear_artif_neural_network() = default;
+    linear_artif_neural_network(const linear_artif_neural_network&) = default;
+    linear_artif_neural_network(linear_artif_neural_network&&) noexcept = default;
+    linear_artif_neural_network& operator=(const linear_artif_neural_network&) = default;
+    linear_artif_neural_network& operator=(linear_artif_neural_network&&) = default;
+
+    void set_neuron_connection_weight(const unsigned int f_neuron_idx, const unsigned int s_neuron_idx,
+                                      const double value);
+    void set_neuron(const unsigned int neural_layer_idx, const unsigned int neuron_idx, const double value);
+
+    double get_neuron_value(const unsigned int neural_layer_idx, const unsigned int neuron_idx) const;
+    double get_neuron_connection_weight(const unsigned int f_neuron_idx, const unsigned int s_neuron_idx) const;
 };
