@@ -1,5 +1,9 @@
 #pragma once
+#include "learning_data.h"
 
+class linear_artif_neural_network;
+
+// Implements the neural network learning functionality
 class neural_network_teacher
 {
 protected:
@@ -18,8 +22,13 @@ public:
     neural_network_teacher& operator=(const neural_network_teacher&) = default;
     neural_network_teacher& operator=(neural_network_teacher&&) = default;
 
-    void teach()
+    static void init_neural_network(linear_artif_neural_network& neural_network, const double weights_from = -0.5,
+                                    const double weights_to = 0.5, const double bias_from = -0.5,
+                                    const double bias_to = 0.5);
+
+    void teach(linear_artif_neural_network& neural_network, const learning_data& data)
     {
+        
     }
 
     double get_min_rms_error() const;

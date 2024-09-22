@@ -155,15 +155,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="learning_data.cpp" />
-    <ClCompile Include="LinearArtificialNeuralNetwork.cpp" />
+    <ClCompile Include="linear_artificial_neural_network.cpp" />
     <ClCompile Include="neural_network_teacher.cpp" />
     <ClCompile Include="WidrowHoffAlgorithm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="learning_data.h" />
-    <ClInclude Include="LinearArtificialNeuralNetwork.h" />
+    <ClInclude Include="linear_artificial_neural_network.h" />
     <ClInclude Include="neural_network_teacher.h" />
-    <ClInclude Include="pair_hash.h" />
+    <ClInclude Include="neural_network_structs.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

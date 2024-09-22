@@ -7,21 +7,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56f5d76e-7c8a-405d-84bd-08048fff128a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/learning_data.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learning_data.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neural_network_teacher.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neural_network_teacher.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pair_hash.h" afterDir="false" />
+    <list default="true" id="56f5d76e-7c8a-405d-84bd-08048fff128a" name="Changes" comment="teacher, data, neural(update)">
+      <change afterPath="$PROJECT_DIR$/linear_artificial_neural_network.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/neural_network_structs.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WidrowHoffAlgorithm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WidrowHoffAlgorithm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LinearArtificialNeuralNetwork.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/LinearArtificialNeuralNetwork.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LinearArtificialNeuralNetwork.h" beforeDir="false" afterPath="$PROJECT_DIR$/LinearArtificialNeuralNetwork.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LinearArtificialNeuralNetwork.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LinearArtificialNeuralNetwork.h" beforeDir="false" afterPath="$PROJECT_DIR$/linear_artificial_neural_network.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/LinearArtificialNeuralNetwork.obj" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/LinearArtificialNeuralNetwork.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/CL.command.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/CL.read.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/CL.write.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/Cl.items.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/Cl.items.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/WidrowHoffAlgorithm.lastbuildstate" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/WidrowHoffAlgorithm.lastbuildstate" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/link.command.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/link.read.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/link.secondary.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/link.secondary.1.tlog" afterDir="false" />
@@ -32,6 +28,11 @@
       <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/vc143.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/vc143.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WidrowHoffAlgorithm.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHoffAlgorithm.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WidrowHoffAlgorithm.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHoffAlgorithm.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learning_data.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/learning_data.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learning_data.h" beforeDir="false" afterPath="$PROJECT_DIR$/learning_data.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neural_network_teacher.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/neural_network_teacher.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neural_network_teacher.h" beforeDir="false" afterPath="$PROJECT_DIR$/neural_network_teacher.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pair_hash.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/x64/Debug/WidrowHoffAlgorithm.exe" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/WidrowHoffAlgorithm.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/x64/Debug/WidrowHoffAlgorithm.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/WidrowHoffAlgorithm.pdb" afterDir="false" />
     </list>
@@ -46,6 +47,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/unordered_map" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/xhash" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.38.33130/include/xutility" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.40.33807/include/vector" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -151,7 +153,7 @@
       <workItem from="1725863843595" duration="6465000" />
       <workItem from="1726563250879" duration="43000" />
       <workItem from="1726945135800" duration="19000" />
-      <workItem from="1727008337281" duration="13075000" />
+      <workItem from="1727008337281" duration="29166000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />
@@ -185,7 +187,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725870493772</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="teacher, data, neural(update)">
+      <option name="closed" value="true" />
+      <created>1727022410280</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1727022410280</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,7 +220,8 @@
     <MESSAGE value="Create base functional" />
     <MESSAGE value="Test" />
     <MESSAGE value="add neuron_connections_" />
-    <option name="LAST_COMMIT_MESSAGE" value="add neuron_connections_" />
+    <MESSAGE value="teacher, data, neural(update)" />
+    <option name="LAST_COMMIT_MESSAGE" value="teacher, data, neural(update)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
