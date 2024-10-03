@@ -156,13 +156,11 @@
   <ItemGroup>
     <ClCompile Include="LearningData.cpp" />
     <ClCompile Include="NeuralNetwork.cpp" />
-    <ClCompile Include="NeuralNetworkTeacher.cpp" />
     <ClCompile Include="WidrowHoffAlgorithm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LearningData.h" />
     <ClInclude Include="NeuralNetwork.h" />
-    <ClInclude Include="NeuralNetworkTeacher.h" />
     <ClInclude Include="NeuralNetworkStructs.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

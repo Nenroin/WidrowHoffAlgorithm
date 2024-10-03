@@ -1,40 +1,45 @@
 #pragma once
 #include "NeuralNetworkStructs.h"
-#include "NeuralNetworkTeacher.h"
-
+#include "LearningData.h"
 #include <unordered_map>
 #include <vector>
+#include <array>
 
 // Designed to create a neural network structure
 class NeuralNetwork
 {
-private:
-    static unsigned int staticNeuronId_;
-
 protected:
-    std::vector<std::unordered_map<unsigned int, Neuron>> neurons_;
+    float learningStep_;
+    float minRmsError_;
+    std::array<std::vector<Neuron>, 2> neurons_;
     std::unordered_map<ConnectiontLoc, float, WeightHash> connections_;
+    NeuralNetwork& CalculateNeuronValueIfConnectionExists(const unsigned int lNeuronEdx, const unsigned int rNeuronEdx);
 
 public:
-    NeuralNetwork() = default;
+    explicit NeuralNetwork(const float learningStep = 0.01f, const float minRmsError = 0.01f) :
+        learningStep_{learningStep}, minRmsError_{minRmsError}
+    {
+        neurons_[0].emplace_back();
+        neurons_[1].emplace_back();
+    }
+
+    NeuralNetwork& SetNeuronNumberFirstLayer(const unsigned int neuronNum);
+    NeuralNetwork& SetNeuronNumberSecondLayer(const unsigned int neuronNum);
+    NeuralNetwork& CreateConnection(const unsigned int lNeuronEdx, const unsigned int rNeuronEdx,
+                                    const float value = 0.0);
+    NeuralNetwork& SetConnectionValueIfConnectionExists(const unsigned int lNeuronEdx, const unsigned int rNeuronEdx,
+                                                        const float value = 0.0);
+    float GetConnectionValue(const unsigned int lNeuronEdx, const unsigned int rNeuronEdx) const;
+
+    // Teaching -------------------------------------------------------------------------------------------------------
+    void InitNeuralNetwork(const float weightsFrom = -0.5, const float weightsTo = 0.5,
+                           const float biasFrom = -0.5, const float biasTo = 0.5);
+    void Teach(const LearningData& data, const unsigned int epochs);
+    // ----------------------------------------------------------------------------------------------------------------
     ~NeuralNetwork() = default;
     NeuralNetwork(const NeuralNetwork&) = delete;
     NeuralNetwork(NeuralNetwork&&) noexcept = delete;
     NeuralNetwork& operator=(const NeuralNetwork&) = delete;
     NeuralNetwork& operator=(NeuralNetwork&&) = delete;
-
-    NeuralNetwork& AddLayer(const unsigned int neuronNum);
-    NeuralNetwork& CreateConnection(const unsigned int lNeuronId, const unsigned int rNeuronId,
-                                    const float value = 0.0);
-    NeuralNetwork& FoundAndSetConnectionValue(const unsigned int lNeuronId, const unsigned int rNeuronId,
-                                              const float value = 0.0);
-    float FoundAndGetConnectionValue(const unsigned int lNeuronId, const unsigned int rNeuronId) const;
-    Neuron GetNeuronValueById(const unsigned int id) const;
-
-    static unsigned int GetLastNeuronId() { return staticNeuronId_; }
-
-    static friend void NeuralNetworkTeacher::InitNeuralNetwork(NeuralNetwork& neuralNetwork, float weightsFrom,
-                                                               float weightsTo, float biasFrom, float biasTo);
-    friend void NeuralNetworkTeacher::Teach(NeuralNetwork& neuralNetwork, const LearningData& data,
-                                            const unsigned int epochs);
+    // ----------------------------------------------------------------------------------------------------------------
 };
