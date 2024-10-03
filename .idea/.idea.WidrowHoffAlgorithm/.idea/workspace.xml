@@ -8,35 +8,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56f5d76e-7c8a-405d-84bd-08048fff128a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/LearningData.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LearningData.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NeuralNetwork.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NeuralNetwork.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NeuralNetworkStructs.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NeuralNetworkTeacher.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NeuralNetworkTeacher.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WidrowHoffAlgorithm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WidrowHoffAlgorithm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NeuralNetwork.h" beforeDir="false" afterPath="$PROJECT_DIR$/NeuralNetwork.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NeuralNetworkStructs.h" beforeDir="false" afterPath="$PROJECT_DIR$/NeuralNetworkStructs.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NeuralNetworkTeacher.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/NeuralNetworkTeacher.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NeuralNetworkTeacher.h" beforeDir="false" afterPath="$PROJECT_DIR$/NeuralNetworkTeacher.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/CL.command.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/CL.read.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/CL.write.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/Cl.items.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/Cl.items.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/link.command.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/link.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/link.secondary.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/link.secondary.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHo.017A6112.tlog/link.write.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHoffAlgorithm.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHoffAlgorithm.ilk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHoffAlgorithm.obj" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/WidrowHoffAlgorithm.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/vc143.idb" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/vc143.idb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/vc143.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHo.017A6112/x64/Debug/vc143.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WidrowHoffAlgorithm.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHoffAlgorithm.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WidrowHoffAlgorithm.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/WidrowHoffAlgorithm.vcxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learning_data.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/learning_data.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linear_artificial_neural_network.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linear_artificial_neural_network.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neural_network_structs.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neural_network_teacher.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neural_network_teacher.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/x64/Debug/WidrowHoffAlgorithm.exe" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/WidrowHoffAlgorithm.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/x64/Debug/WidrowHoffAlgorithm.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/WidrowHoffAlgorithm.pdb" afterDir="false" />
     </list>
@@ -49,6 +34,156 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -75,7 +210,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "C++ Project.WidrowHoffAlgorithm.executor": "Debug",
+    "C++ Project.WidrowHoffAlgorithm.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
@@ -167,7 +302,8 @@
       <workItem from="1727104029116" duration="1336000" />
       <workItem from="1727176295122" duration="767000" />
       <workItem from="1727799572590" duration="7356000" />
-      <workItem from="1727850300321" duration="13758000" />
+      <workItem from="1727850300321" duration="33230000" />
+      <workItem from="1727940627218" duration="7819000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <option name="closed" value="true" />
@@ -217,7 +353,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727040470770</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="New structure and Formatting">
+      <option name="closed" value="true" />
+      <created>1727874940064</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1727874940065</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,18 +388,8 @@
     <MESSAGE value="add neuron_connections_" />
     <MESSAGE value="teacher, data, neural(update)" />
     <MESSAGE value="init_neural_network ready" />
-    <option name="LAST_COMMIT_MESSAGE" value="init_neural_network ready" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/WidrowHoffAlgorithm.cpp</url>
-          <line>16</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="New structure and Formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="New structure and Formatting" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

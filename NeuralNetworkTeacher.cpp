@@ -1,5 +1,6 @@
 #include "NeuralNetworkTeacher.h"
 #include "NeuralNetwork.h"
+#include <iostream>
 #include <random>
 
 float NeuralNetworkTeacher::GetMinRmsError() const
@@ -44,102 +45,170 @@ void NeuralNetworkTeacher::InitNeuralNetwork(NeuralNetwork& neuralNetwork, const
     }
 }
 
-void NeuralNetworkTeacher::Teach(NeuralNetwork& neuralNetwork, const LearningData& data)
+void NeuralNetworkTeacher::Teach(NeuralNetwork& neuralNetwork, const LearningData& data, const unsigned int epochs)
 {
-    int learnDataIdx{0};
-    int testDataIdx{0};
+    unsigned int learnDataIdx{0};
+    unsigned int testDataIdx{0};
+    unsigned int lastTestDataIdx{0};
+    float standardError{0.0f};
+
+    for (unsigned int epoch{0}; epoch < epochs; ++epoch)
     {
-        // Feeding input data to a neural network ---------------------------------------------------------------------
-        for (auto& neuron : neuralNetwork.neurons_[0])
+        for (unsigned int i{0}; i < 45; ++i)
         {
-            neuron.second.value = data.GetTrainingLearnValAtAnyIdx(learnDataIdx++);
-        }
-        // ------------------------------------------------------------------------------------------------------------
-
-        // The output elements of the neural network are being calculated ---------------------------------------------
-        auto lLayerIt = neuralNetwork.neurons_.begin();
-        auto rLayerIt = ++neuralNetwork.neurons_.begin();
-
-        while (rLayerIt != neuralNetwork.neurons_.end())
-        {
-            auto rNeuronIt = rLayerIt->begin();
-            while (rNeuronIt != rLayerIt->end())
+            // Assign incoming values to the first layer of neurons ----------------------------------------------------
+            for (auto& neuron : neuralNetwork.neurons_[0])
             {
-                auto lNeuronIt = lLayerIt->begin();
-                while (lNeuronIt != lLayerIt->end())
+                neuron.second.value = data.GetTrainingLearnValAtAnyIdx(learnDataIdx++);
+            }
+            // ------------------------------------------------------------------------------------------------------------
+
+            // Calculate the values of the output neurons --------------------------------------------------------------
+            {
+                auto lLayerIt = neuralNetwork.neurons_.begin();
+                auto rLayerIt = ++neuralNetwork.neurons_.begin();
+
+                while (rLayerIt != neuralNetwork.neurons_.end())
+                {
+                    auto rNeuronIt = rLayerIt->begin();
+                    while (rNeuronIt != rLayerIt->end())
+                    {
+                        auto lNeuronIt = lLayerIt->begin();
+                        rNeuronIt->second.value = 0.0f;
+                        rNeuronIt->second.oldValue = 0.0f;
+                        while (lNeuronIt != lLayerIt->end())
+                        {
+                            ConnectiontLoc keyVal{lNeuronIt->first, rNeuronIt->first};
+                            auto connectionIt = neuralNetwork.connections_.find(keyVal);
+                            if (connectionIt != neuralNetwork.connections_.end())
+                            {
+                                rNeuronIt->second.value += lNeuronIt->second.value * connectionIt->second;
+                            }
+                            ++lNeuronIt;
+                        }
+                        rNeuronIt->second.value -= rNeuronIt->second.bias;
+                        ++rNeuronIt;
+                    }
+                    ++lLayerIt;
+                    ++rLayerIt;
+                }
+            }
+            // ------------------------------------------------------------------------------------------------------------
+
+            // Calculate the standard error and calculate the bias of the output neurons -------------------------------
+
+            auto rLayerIt = --neuralNetwork.neurons_.end();
+            auto lLayerIt = neuralNetwork.neurons_.end() - 2;
+
+            lastTestDataIdx = testDataIdx;
+            standardError = 0.0f;
+            for (auto& neuron : *rLayerIt)
+            {
+                standardError += (neuron.second.value - data.GetTrainingTestValAtAnyIdx(testDataIdx))
+                    * (neuron.second.value - data.GetTrainingTestValAtAnyIdx(testDataIdx));
+
+                neuron.second.bias -= learningStep_ * (neuron.second.value
+                    - data.GetTrainingTestValAtAnyIdx(testDataIdx++));
+            }
+            standardError *= 0.5f;
+            testDataIdx = lastTestDataIdx;
+
+            // --------------------------------------------------------------------------------------------------------
+
+            // Adjusting the values of the links of the last layer ----------------------------------------------------
+            for (auto lNeuronIt = lLayerIt->begin(); lNeuronIt != lLayerIt->end(); ++lNeuronIt)
+            {
+                lastTestDataIdx = testDataIdx;
+                for (auto rNeuronIt = rLayerIt->begin(); rNeuronIt != rLayerIt->end(); ++rNeuronIt)
                 {
                     ConnectiontLoc keyVal{lNeuronIt->first, rNeuronIt->first};
-                    rNeuronIt->second.value += lNeuronIt->second.value * neuralNetwork.connections_.at(keyVal);
-                    ++lNeuronIt;
-                }
-                rNeuronIt->second.value -= rNeuronIt->second.bias;
-                ++rNeuronIt;
-            }
-            ++lLayerIt;
-            ++rLayerIt;
-        }
-        // ------------------------------------------------------------------------------------------------------------
-
-        // Calculation of the root mean square error of a neural network ----------------------------------------------
-        const unsigned int last_layer_idx{
-            static_cast<unsigned int>(neuralNetwork.layerNeuronsCount_.size()) - 1
-        };
-        const unsigned int last_layer_neurons_count{neuralNetwork.layerNeuronsCount_.at(last_layer_idx)};
-
-        std::vector<float> standard_errors;
-        const auto& neurons{neuralNetwork.neurons_};
-
-        for (unsigned int idx{0}; idx < last_layer_neurons_count; ++idx)
-        {
-            const float right_value{data.GetTrainingTestValAtAnyIdx(testDataIdx++)};
-            const float predicted_value{neurons.at({last_layer_idx, idx}).value};
-            const float buff_val{(predicted_value - right_value)};
-            const float standard_error{0.5 * (buff_val * buff_val)};
-
-            standard_errors.push_back(standard_error);
-        }
-        // ------------------------------------------------------------------------------------------------------------
-
-        // The weights and threshold of the neural network are changed ------------------------------------------------
-        for (unsigned int right_layer_idx = layers_count - 1; right_layer_idx > 0; --right_layer_idx)
-        {
-            const unsigned int right_layer_neuron_count{neuralNetwork.layerNeuronsCount_.at(right_layer_idx)};
-
-            for (unsigned int right_neuron_idx{0}; right_neuron_idx < right_layer_neuron_count; ++right_neuron_idx)
-            {
-                const unsigned int left_layer_neuron_count{neuralNetwork.layerNeuronsCount_.at(right_layer_idx - 1)};
-                const unsigned int left_layer_idx{right_layer_idx - 1};
-
-                for (unsigned int left_neuron_idx{0}; left_neuron_idx < left_layer_neuron_count; ++left_neuron_idx)
-                {
-                    WeightLoc weight_location{
-                        neuron_loc_t(left_layer_idx, left_neuron_idx),
-                        neuron_loc_t(right_layer_idx, right_neuron_idx)
-                    };
-
-                    auto it = neuralNetwork.neuronConnections_.find(weight_location);
-
-                    if (it != neuralNetwork.neuronConnections_.end())
+                    auto connectionIt = neuralNetwork.connections_.find(keyVal);
+                    if (connectionIt != neuralNetwork.connections_.end())
                     {
-                        const Neuron buff_left_neuron{neuralNetwork.GetNeuron(left_layer_idx, left_neuron_idx)};
-                        Neuron buff_right_neuron{neuralNetwork.GetNeuron(right_layer_idx, right_neuron_idx)};
-                        //w(t+1)=w(t) - α(y - e) * x	
-                        it->second = it->second - learningStep_ * (buff_right_neuron.value)
-                            * buff_left_neuron.value;
-
-                        // T_1 (t+1) = T_1(t) - α * (y - e)
-                        buff_left_neuron.bias = buff_left_neuron.bias - learningStep_ * (buff_right_neuron.value
-                            - buff_left_neuron.value);
-                        neuralNetwork.SetNeuron(right_layer_idx, right_neuron_idx, buff_right_neuron);
+                        connectionIt->second -= learningStep_ * lNeuronIt->second.value
+                            * (rNeuronIt->second.value - data.GetTrainingTestValAtAnyIdx(testDataIdx++));
                     }
                 }
+                testDataIdx = lastTestDataIdx;
             }
+            // ------------------------------------------------------------------------------------------------------------
 
-            for (auto& neuron_val : neuralNetwork.neurons_)
+            // Adjust the values of the left layer of neurons and save their old values for use in the formula ------------
+            for (auto lNeuronIt = lLayerIt->begin(); lNeuronIt != lLayerIt->end(); ++lNeuronIt)
             {
-                neuron_val.second.value -= neuron_val.second.bias;
+                lastTestDataIdx = testDataIdx;
+                lNeuronIt->second.oldValue = lNeuronIt->second.value;
+                lNeuronIt->second.value = 0.0f;
+                for (auto rNeuronIt = rLayerIt->begin(); rNeuronIt != rLayerIt->end(); ++rNeuronIt)
+                {
+                    ConnectiontLoc keyVal{lNeuronIt->first, rNeuronIt->first};
+                    auto connectionIt = neuralNetwork.connections_.find(keyVal);
+                    if (connectionIt != neuralNetwork.connections_.end())
+                    {
+                        lNeuronIt->second.value += data.GetTrainingTestValAtAnyIdx(testDataIdx++) * connectionIt->second;
+                    }
+                }
+                testDataIdx = lastTestDataIdx;
             }
+            // ------------------------------------------------------------------------------------------------------------
+
+            // Adjust all other values in the hidden layers ---------------------------------------------------------------
+            if (lLayerIt != neuralNetwork.neurons_.begin())
+            {
+                --lLayerIt;
+                --rLayerIt;
+
+                while (true)
+                {
+                    // Adjusting the values of the links
+                    for (auto lNeuronIt = lLayerIt->begin(); lNeuronIt != lLayerIt->end(); ++lNeuronIt)
+                    {
+                        for (auto rNeuronIt = rLayerIt->begin(); rNeuronIt != rLayerIt->end(); ++rNeuronIt)
+                        {
+                            ConnectiontLoc keyVal{lNeuronIt->first, rNeuronIt->first};
+                            auto connectionIt = neuralNetwork.connections_.find(keyVal);
+                            if (connectionIt != neuralNetwork.connections_.end())
+                            {
+                                connectionIt->second -= learningStep_ * lNeuronIt->second.value
+                                    * (rNeuronIt->second.oldValue - rNeuronIt->second.value);
+                            }
+                        }
+                    }
+
+                    // We adjust the values of the left layer of neurons and keep the old one
+                    for (auto lNeuronIt = lLayerIt->begin(); lNeuronIt != lLayerIt->end(); ++lNeuronIt)
+                    {
+                        lNeuronIt->second.oldValue = lNeuronIt->second.value;
+                        lNeuronIt->second.value = 0.0f;
+                        for (auto rNeuronIt = rLayerIt->begin(); rNeuronIt != rLayerIt->end(); ++rNeuronIt)
+                        {
+                            ConnectiontLoc keyVal{lNeuronIt->first, rNeuronIt->first};
+                            auto connectionIt = neuralNetwork.connections_.find(keyVal);
+                            if (connectionIt != neuralNetwork.connections_.end())
+                            {
+                                lNeuronIt->second.value += rNeuronIt->second.value * connectionIt->second;
+                            }
+                        }
+                    }
+
+                    if (lLayerIt == neuralNetwork.neurons_.begin()) break;
+
+                    --lLayerIt;
+                    --rLayerIt;
+                }
+            }
+            // ------------------------------------------------------------------------------------------------------------
+
+            // Shifting the index of the test sample to the appropriate value
+            testDataIdx += (--neuralNetwork.neurons_.end())->size();
+       } 
+        // Output information about the training parameters
+        std::cout << "Epoch: " << epoch + 1 << '\n';
+        std::cout << "Standard error: " << standardError << '\n';
+
+        for(auto &i : neuralNetwork.connections_)
+        {
+            std::cout << i.second << '\n';
         }
-        // ------------------------------------------------------------------------------------------------------------
     }
 }

@@ -25,7 +25,7 @@ public:
                                     const float weightsTo = 0.5, const float biasFrom = -0.5,
                                     const float biasTo = 0.5);
 
-    void Teach(NeuralNetwork& neuralNetwork, const LearningData& data);
+    void Teach(NeuralNetwork& neuralNetwork, const LearningData& data, const unsigned int epochs);
 
     float GetMinRmsError() const;
     float GetLearningStep() const;

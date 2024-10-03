@@ -35,5 +35,6 @@ public:
 
     static friend void NeuralNetworkTeacher::InitNeuralNetwork(NeuralNetwork& neuralNetwork, float weightsFrom,
                                                                float weightsTo, float biasFrom, float biasTo);
-    friend void NeuralNetworkTeacher::Teach(NeuralNetwork& neuralNetwork, const LearningData& data);
+    friend void NeuralNetworkTeacher::Teach(NeuralNetwork& neuralNetwork, const LearningData& data,
+                                            const unsigned int epochs);
 };

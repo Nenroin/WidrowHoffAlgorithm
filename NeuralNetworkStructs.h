@@ -11,8 +11,9 @@ struct Neuron
 {
     float bias;
     float value;
-
-    Neuron() : bias{0.0f}, value{0.0f}
+    float oldValue;
+    
+    Neuron() : bias{0.0f}, value{0.0f}, oldValue(0.0f)
     {
     }
 };
