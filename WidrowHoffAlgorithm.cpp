@@ -5,23 +5,19 @@
 
 int main()
 {
-    NeuralNetwork neuralNetwork(1.0f, 0.001f);
-
-    neuralNetwork.CreateConnection(0, 0).CreateConnection(1, 0).
-                  CreateConnection(2, 0).CreateConnection(3, 0);
-    neuralNetwork.SetNeuronNumberFirstLayer(4).SetNeuronNumberSecondLayer(1);
+    NeuralNetwork neuralNetwork(0.1, 0.001);
+    neuralNetwork.SetNeuronNumber(4, 1);
     neuralNetwork.InitNeuralNetwork();
 
-    std::vector<float> learnData, testData;
-    float x{0.315f};
-    constexpr float endValue{1.57f};
+    std::vector<double> learnData, testData;
+    double x{0.315};
+    constexpr double endValue{1.57};
     constexpr int steps{45};
 
-    const float stepSize = (endValue - x) / steps;
+    const double stepSize = (endValue - x) / steps;
     for (int i{0}; i < steps; ++i)
     {
-        const float buffFloatX{static_cast<float>(x)};
-        float val{3.0f * std::sin(5.0f * buffFloatX) + 0.5f};
+        double val{3.0 * std::sin(5.0 * x) + 0.5};
 
         if ((i + 1) % 5 == 0)
         {
@@ -31,7 +27,7 @@ int main()
         {
             learnData.emplace_back(val);
         }
-
+        
         x += stepSize;
     }
 

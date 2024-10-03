@@ -17,13 +17,13 @@ public:
     LearningData& operator=(const LearningData&) = delete;
     LearningData& operator=(LearningData&&) = delete;
 
-    void AddTrainingVal(const std::vector<float> &learn, const std::vector<float> &test);
-    void AddTestVal(const std::vector<float> &learn, const std::vector<float> &test);
+    void AddTrainingVal(const std::vector<double> &learn, const std::vector<double> &test);
+    void AddTestVal(const std::vector<double> &learn, const std::vector<double> &test);
 
     // When transmitting an index that goes beyond the array,
     // it starts transmitting data starting from the first element
-    float GetTrainingLearnValAtAnyIdx(const unsigned int idx) const;
-    float GetTrainingTestValAtAnyIdx(const unsigned int idx) const;
-    float GetTestLearnValAtAnyIdx(const unsigned int idx) const;
-    float GetTestTestValAtAnyIdx(const unsigned int idx) const;
+    double GetTrainingLearnValAtAnyIdx(const unsigned int idx) const;
+    double GetTrainingTestValAtAnyIdx(const unsigned int idx) const;
+    double GetTestLearnValAtAnyIdx(const unsigned int idx) const;
+    double GetTestTestValAtAnyIdx(const unsigned int idx) const;
 };

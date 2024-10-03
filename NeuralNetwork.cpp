@@ -3,56 +3,16 @@
 #include <random>
 #include <cmath>
 
-NeuralNetwork& NeuralNetwork::SetNeuronNumberFirstLayer(const unsigned int neuronNum)
+NeuralNetwork& NeuralNetwork::SetNeuronNumber(const unsigned int leftNeuronNum,const unsigned int rightNeuronNum)
 {
-    neurons_[0].resize(neuronNum);
+    neurons_[0].resize(leftNeuronNum);
+    neurons_[1].resize(rightNeuronNum);
+    connections_.resize(neurons_[0].size() * neurons_[1].size());
     return *this;
 }
 
-NeuralNetwork& NeuralNetwork::SetNeuronNumberSecondLayer(const unsigned int neuronNum)
-{
-    neurons_[1].resize(neuronNum);
-    return *this;
-}
-
-NeuralNetwork& NeuralNetwork::CreateConnection(const unsigned int lNeuronEdx, const unsigned int rNeuronEdx,
-                                               const float value)
-{
-    connections_[ConnectiontLoc(lNeuronEdx, rNeuronEdx)] = value;
-    return *this;
-}
-
-NeuralNetwork& NeuralNetwork::SetConnectionValueIfConnectionExists(const unsigned int lNeuronEdx,
-                                                                   const unsigned int rNeuronEdx, const float value)
-{
-    const ConnectiontLoc keyVal{lNeuronEdx, rNeuronEdx};
-    const auto connectionIt = connections_.find(keyVal);
-    if (connectionIt != connections_.end())
-    {
-        connectionIt->second = value;
-    }
-    return *this;
-}
-
-NeuralNetwork& NeuralNetwork::CalculateNeuronValueIfConnectionExists(const unsigned int lNeuronEdx,
-                                                                     const unsigned int rNeuronEdx)
-{
-    const ConnectiontLoc keyVal{lNeuronEdx, rNeuronEdx};
-    const auto connectionIt = connections_.find(keyVal);
-    if (connectionIt != connections_.end())
-    {
-        neurons_[1][rNeuronEdx].value += neurons_[0][lNeuronEdx].value * connectionIt->second;
-    }
-    return *this;
-}
-
-float NeuralNetwork::GetConnectionValue(const unsigned int lNeuronEdx, const unsigned int rNeuronEdx) const
-{
-    return connections_.at({lNeuronEdx, rNeuronEdx});
-}
-
-void NeuralNetwork::InitNeuralNetwork(const float weightsFrom, const float weightsTo, const float biasFrom,
-                                      const float biasTo)
+void NeuralNetwork::InitNeuralNetwork(const double weightsFrom, const double weightsTo, const double biasFrom,
+                                      const double biasTo)
 {
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -61,12 +21,12 @@ void NeuralNetwork::InitNeuralNetwork(const float weightsFrom, const float weigh
 
     for (auto& neuron : neurons_[1])
     {
-        neuron.bias = static_cast<float>(randomBias(gen));
+        neuron.bias = static_cast<double>(randomBias(gen));
     }
 
     for (auto& neuronConnection : connections_)
     {
-        neuronConnection.second = static_cast<float>(randomWeight(gen));
+        neuronConnection = static_cast<double>(randomWeight(gen));
     }
 }
 
@@ -74,8 +34,8 @@ void NeuralNetwork::Teach(const LearningData& data, const unsigned int epochs)
 {
     unsigned int learnDataIdx{0};
     unsigned int testDataIdx{0};
-    float standardError{0.0f};
-    
+    double standardError{0.0};
+
     for (unsigned int epoch{0}; epoch < epochs; ++epoch)
     {
         for (unsigned int i{0}; i < 45; ++i)
@@ -86,57 +46,39 @@ void NeuralNetwork::Teach(const LearningData& data, const unsigned int epochs)
                 neuron.value = data.GetTrainingLearnValAtAnyIdx(learnDataIdx++);
             }
             // Calculate the values of the output neurons --------------------------------------------------------------
-            for (unsigned int rNeuronEdx{0}; rNeuronEdx < neurons_[1].size(); ++rNeuronEdx)
+            unsigned int connectionIdx{0};
+            for (auto& rNeuron : neurons_[1])
             {
-                for (unsigned int lNeuronEdx{0}; lNeuronEdx < neurons_[0].size(); ++lNeuronEdx)
+                rNeuron.value = 0;
+                for (const auto& lNeuron : neurons_[0])
                 {
-                    const ConnectiontLoc keyVal{lNeuronEdx, rNeuronEdx};
-                    const auto connectionIt = connections_.find(keyVal);
-                    if (connectionIt != connections_.end())
-                    {
-                        neurons_[1][rNeuronEdx].value += neurons_[0][lNeuronEdx].value * connectionIt->second;
-                    }
+                    rNeuron.value += lNeuron.value * connections_[connectionIdx++];
                 }
-                neurons_[1][rNeuronEdx].value -= neurons_[1][rNeuronEdx].bias;
+                rNeuron.value -= rNeuron.bias;
             }
             // Calculate the standard error and calculate the bias of the output neurons -------------------------------
-            const unsigned int lastTestDataIdx {testDataIdx};
-            float buffStandardError{0.0f};
-            for (auto& neuron : neurons_[1])
+            double buffStandardError{0.0};
+            for (auto& rNeuron : neurons_[1])
             {
-                buffStandardError += static_cast<float>(pow(neuron.value - data.GetTrainingTestValAtAnyIdx(testDataIdx),
-                                                        2));
-                neuron.bias += learningStep_ * (neuron.value - data.GetTrainingTestValAtAnyIdx(testDataIdx++));
-            }
-            standardError += 0.5f * buffStandardError;
-            testDataIdx = lastTestDataIdx;
-            // Adjusting the values of the links of the last layer ----------------------------------------------------
-            for (unsigned int rNeuronEdx{0}; rNeuronEdx < neurons_[1].size(); ++rNeuronEdx)
-            {
-                for (unsigned int lNeuronEdx{0}; lNeuronEdx < neurons_[0].size(); ++lNeuronEdx)
+                buffStandardError += static_cast<double>(pow(
+                    rNeuron.value - data.GetTrainingTestValAtAnyIdx(testDataIdx), 2));
+                rNeuron.bias += learningStep_ * (rNeuron.value - data.GetTrainingTestValAtAnyIdx(testDataIdx));
+                
+                connectionIdx = 0;
+                const unsigned int buffConnectionIdx{testDataIdx};
+                for (const auto& lNeuron : neurons_[0])
                 {
-                    ConnectiontLoc keyVal{lNeuronEdx, rNeuronEdx};
-                    auto connectionIt = connections_.find(keyVal);
-                    if (connectionIt != connections_.end())
-                    {
-                        connectionIt->second -= learningStep_ * neurons_[0][lNeuronEdx].value
-                            * (neurons_[1][rNeuronEdx].value - data.GetTrainingTestValAtAnyIdx(testDataIdx++));
-                    }
+                    connections_[connectionIdx++] -= learningStep_ * lNeuron.value * (rNeuron.value - data.
+                        GetTrainingTestValAtAnyIdx(testDataIdx++));
                 }
+                testDataIdx = buffConnectionIdx;
             }
-            
-            for(auto &neuron : neurons_[1])
-            {
-                neuron.value = 0;
-            }
+            testDataIdx += neurons_[1].size();
+            standardError += 0.5 * buffStandardError;
         }
         // Output information about the training parameters
         std::cout << "Epoch: " << epoch + 1 << '\n';
         std::cout << "Standard error: " << standardError << '\n';
-        for(auto &i : connections_)
-        {
-            std::cout << i.second << '\n';
-        }
         standardError = 0;
     }
 }
