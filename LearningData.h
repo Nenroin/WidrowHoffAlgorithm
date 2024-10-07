@@ -19,7 +19,8 @@ public:
 
     void AddTrainingVal(const std::vector<double> &learn, const std::vector<double> &test);
     void AddTestVal(const std::vector<double> &learn, const std::vector<double> &test);
-
+    unsigned int GetTrainingDataSize() const;
+    unsigned int GetTestDataSize() const;
     // When transmitting an index that goes beyond the array,
     // it starts transmitting data starting from the first element
     double GetTrainingLearnValAtAnyIdx(const unsigned int idx) const;

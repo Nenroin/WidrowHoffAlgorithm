@@ -35,3 +35,13 @@ double LearningData::GetTestTestValAtAnyIdx(const unsigned int idx) const
     const unsigned int wrappedIdx{idx % static_cast<unsigned int>(testData_.test.size())};
     return testData_.test.at(wrappedIdx);
 }
+
+unsigned int LearningData::GetTrainingDataSize() const
+{
+    return static_cast<unsigned int>(trainingData_.learn.size()) + static_cast<unsigned int>(trainingData_.test.size());
+}
+
+unsigned int LearningData::GetTestDataSize() const
+{
+    return static_cast<unsigned int>(testData_.learn.size()) + static_cast<unsigned int>(testData_.test.size());
+}

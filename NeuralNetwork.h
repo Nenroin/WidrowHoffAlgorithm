@@ -14,14 +14,15 @@ protected:
     std::vector<double> connections_;
 
 public:
-    explicit NeuralNetwork(const double learningStep = 0.001, const double minRmsError = 0.01) :
+    explicit NeuralNetwork(const double learningStep = 0.01, const double minRmsError = 0.01) :
         learningStep_{learningStep}, minRmsError_{minRmsError}
     {}
     NeuralNetwork& SetNeuronNumber(const unsigned int leftNeuronNum,const unsigned int rightNeuronNum);
-    // Teaching -------------------------------------------------------------------------------------------------------
     void InitNeuralNetwork(const double weightsFrom = -0.5, const double weightsTo = 0.5,
                            const double biasFrom = -0.5, const double biasTo = 0.5);
+    // Teaching -------------------------------------------------------------------------------------------------------
     void Teach(const LearningData& data, const unsigned int epochs);
+    void Test(const LearningData& data);
     // ----------------------------------------------------------------------------------------------------------------
     ~NeuralNetwork() = default;
     NeuralNetwork(const NeuralNetwork&) = delete;
